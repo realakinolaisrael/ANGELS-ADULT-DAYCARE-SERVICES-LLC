@@ -38,6 +38,9 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -46,16 +49,26 @@ body {
   line-height: 1.6;
   color: var(--charcoal);
   background: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 img, video {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ===== Typography ===== */
@@ -1447,7 +1460,55 @@ p {
 }
 
 /* ===== Responsive ===== */
+/* ==========================================================================
+   RESPONSIVE DESIGN - All Devices
+   ========================================================================== */
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-desc {
+    font-size: 1.25rem;
+  }
+}
+
+/* Desktop/Laptop (1200px and below) */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .team-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet/iPad (900px and below) */
 @media (max-width: 900px) {
+  /* Navigation - Mobile Menu */
   .nav {
     position: fixed;
     top: 80px;
@@ -1462,6 +1523,7 @@ p {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    z-index: 999;
   }
   
   .nav.open {
@@ -1474,17 +1536,71 @@ p {
     display: flex;
   }
   
+  /* Typography */
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .page-hero {
+    padding: 8rem 0 4rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  /* Hero */
+  .hero-content {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-desc {
+    font-size: 1rem;
+  }
+  
+  .hero-scroll {
+    display: none;
+  }
+  
+  /* About Grid */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .about-image {
+    order: -1;
   }
   
   .about-image img {
     min-height: 280px;
   }
   
+  .about-stats {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* Gallery */
   .gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
   
   .gallery-large {
@@ -1492,109 +1608,471 @@ p {
   }
   
   .gallery-item img {
-    min-height: 240px;
+    min-height: 200px;
   }
   
+  /* Services */
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
   
+  .service-card {
+    padding: 1.5rem;
+  }
+  
+  /* Footer */
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  
+  /* Why Section */
   .why-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .why-image {
+    order: -1;
   }
   
   .why-image img {
     min-height: 280px;
   }
   
+  /* Jobs Grid */
   .jobs-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
+  /* Apply Form */
   .apply-wrapper {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
   
+  /* Story Grid */
   .story-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  
+  .story-image {
+    order: -1;
   }
   
   .story-image img {
     min-height: 280px;
   }
   
+  /* Mission Grid */
   .mission-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
+  /* Offer Grid */
   .offer-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
+  /* Team Grid */
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
   
+  /* Form */
   .form-row {
     grid-template-columns: 1fr;
   }
   
+  /* Contact Banner */
   .contact-banner .container {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
   
-  .section {
-    padding: 4rem 0;
+  .banner-actions {
+    justify-content: center;
   }
   
+  /* WhatsApp Popup */
   .wa-popup {
     width: calc(100% - 3rem);
     right: 1.5rem;
     left: 1.5rem;
   }
+  
+  /* Logo */
+  .logo-img {
+    height: 40px;
+  }
 }
 
-@media (max-width: 600px) {
-  .header-inner {
-    height: 70px;
+/* Small Tablet/Large Phone (768px and below) */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
   }
   
-  .team-grid {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section {
+    padding: 3.5rem 0;
+  }
+  
+  /* Services */
+  .services-grid {
     grid-template-columns: 1fr;
   }
   
-  .team-photo {
-    height: 240px;
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
   
+  /* About Stats */
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    align-items: center;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  /* Benefits List */
+  .benefits-list {
+    padding-left: 0;
+  }
+}
+
+/* Mobile Phone (600px and below) */
+@media (max-width: 600px) {
+  /* Header */
+  .header-inner {
+    height: 70px;
+    padding: 0 1rem;
+  }
+  
+  .nav {
+    top: 70px;
+    padding: 1.5rem;
+  }
+  
+  /* Logo */
+  .logo-img {
+    height: 35px;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  /* Section spacing */
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  /* Page Hero */
+  .page-hero {
+    padding: 7rem 0 3rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 1.6rem;
+  }
+  
+  .page-hero-desc {
+    font-size: 0.95rem;
+  }
+  
+  /* Hero */
   .hero-content {
+    padding: 0 1rem;
     padding-top: 80px;
+  }
+  
+  .hero-desc {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
   }
   
   .hero-actions {
     flex-direction: column;
     gap: 0.75rem;
+    width: 100%;
+    padding: 0 1rem;
   }
   
   .hero-actions .btn {
     width: 100%;
   }
   
+  /* Team Grid */
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-photo {
+    height: 280px;
+  }
+  
+  .team-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  .btn-sm {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* Banner */
   .banner-actions {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
   
   .banner-actions .btn {
     width: 100%;
+  }
+  
+  /* Contact Banner */
+  .contact-banner h2 {
+    font-size: 1.3rem;
+  }
+  
+  .contact-banner p {
+    font-size: 0.9rem;
+  }
+  
+  /* Job Cards */
+  .job-card {
+    padding: 1.25rem;
+  }
+  
+  .job-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  /* Form */
+  .apply-form {
+    padding: 1.5rem;
+  }
+  
+  .apply-info {
+    text-align: center;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  /* Gallery */
+  .gallery-item img {
+    min-height: 200px;
+  }
+  
+  /* Service Cards */
+  .service-card {
+    padding: 1.25rem;
+  }
+  
+  .service-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  /* Mission Cards */
+  .mission-card {
+    padding: 1.5rem;
+  }
+  
+  /* WhatsApp Widget */
+  .wa-btn {
+    width: 50px;
+    height: 50px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .wa-popup {
+    right: 1rem;
+    left: 1rem;
+    bottom: 70px;
+    width: calc(100% - 2rem);
+  }
+  
+  /* About Image */
+  .about-image img {
+    min-height: 220px;
+  }
+  
+  /* Story Image */
+  .story-image img {
+    min-height: 220px;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  
+  .section-intro {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra Small Phones (400px and below) */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  .hero-content {
+    padding-top: 60px;
+  }
+  
+  .logo-img {
+    height: 30px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .team-photo {
+    height: 240px;
+  }
+  
+  .page-hero {
+    padding: 6rem 0 2.5rem;
+  }
+  
+  .page-hero h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Landscape mode adjustments for phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .hero-content {
+    padding-top: 60px;
+  }
+  
+  .hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .hero-desc {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: row;
+  }
+  
+  .hero-actions .btn {
+    width: auto;
+    padding: 10px 20px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .header,
+  .wa-widget,
+  .hero-video,
+  .menu-toggle {
+    display: none !important;
+  }
+  
+  .hero {
+    min-height: auto;
+    background: var(--primary);
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+  
+  .section {
+    padding: 1.5rem 0;
+    page-break-inside: avoid;
   }
 }
