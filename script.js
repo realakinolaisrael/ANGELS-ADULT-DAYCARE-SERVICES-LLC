@@ -23,14 +23,19 @@ if (menuToggle && nav) {
   });
 }
 
-// WhatsApp popup
+// WhatsApp popup and tooltip
 const waBtn = document.getElementById('waBtn');
 const waPopup = document.getElementById('waPopup');
 const waClose = document.getElementById('waClose');
+const waWidget = document.querySelector('.wa-widget');
 
 if (waBtn && waPopup && waClose) {
   waBtn.addEventListener('click', () => {
     waPopup.classList.toggle('open');
+    // Hide tooltip when popup opens
+    if (waWidget) {
+      waWidget.classList.remove('show-tooltip');
+    }
   });
 
   waClose.addEventListener('click', () => {
@@ -49,6 +54,48 @@ if (waBtn && waPopup && waClose) {
     if (e.key === 'Escape') {
       waPopup.classList.remove('open');
     }
+  });
+}
+
+// Touch support for WhatsApp tooltip
+if (waWidget) {
+  let tooltipTimeout;
+  
+  // Show tooltip on touch (for mobile devices)
+  waWidget.addEventListener('touchstart', (e) => {
+    // Show tooltip
+    waWidget.classList.add('show-tooltip');
+    
+    // Hide tooltip after 3 seconds
+    clearTimeout(tooltipTimeout);
+    tooltipTimeout = setTimeout(() => {
+      waWidget.classList.remove('show-tooltip');
+    }, 3000);
+  }, { passive: true });
+  
+  // Show tooltip periodically to grab attention
+  let attentionTimeout;
+  const showAttentionTooltip = () => {
+    // Only show if popup is not open
+    if (waPopup && !waPopup.classList.contains('open')) {
+      waWidget.classList.add('show-tooltip');
+      
+      setTimeout(() => {
+        waWidget.classList.remove('show-tooltip');
+      }, 4000);
+    }
+    
+    // Show again after 30 seconds
+    attentionTimeout = setTimeout(showAttentionTooltip, 30000);
+  };
+  
+  // Start attention tooltip after 5 seconds on page load
+  setTimeout(showAttentionTooltip, 5000);
+  
+  // Clear attention timeout when user interacts with widget
+  waWidget.addEventListener('click', () => {
+    clearTimeout(attentionTimeout);
+    waWidget.classList.remove('show-tooltip');
   });
 }
 
