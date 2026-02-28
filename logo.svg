@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <defs>
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5a4a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3d32;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a962;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4b87a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Angel Wings Symbol -->
+  <g transform="translate(10, 8)">
+    <!-- Left Wing -->
+    <path d="M30 32 Q15 20 8 35 Q5 45 15 50 Q20 52 28 48 Q32 45 30 32" 
+          fill="url(#wingGradient)" opacity="0.9"/>
+    <path d="M30 32 Q20 25 12 38 Q10 45 18 48 Q24 50 30 45" 
+          fill="none" stroke="#c9a962" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Right Wing -->
+    <path d="M35 32 Q50 20 57 35 Q60 45 50 50 Q45 52 37 48 Q33 45 35 32" 
+          fill="url(#wingGradient)" opacity="0.9"/>
+    <path d="M35 32 Q45 25 53 38 Q55 45 47 48 Q41 50 35 45" 
+          fill="none" stroke="#c9a962" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Center Heart/Halo -->
+    <circle cx="32.5" cy="28" r="8" fill="none" stroke="url(#accentGradient)" stroke-width="2"/>
+    <path d="M32.5 33 Q28 30 28 26 Q28 22 32.5 25 Q37 22 37 26 Q37 30 32.5 33" 
+          fill="#c9a962"/>
+    
+    <!-- Caring Hands -->
+    <path d="M22 55 Q18 58 22 62 Q26 65 32.5 60 Q39 65 43 62 Q47 58 43 55 Q38 52 32.5 56 Q27 52 22 55" 
+          fill="url(#wingGradient)" opacity="0.8"/>
+  </g>
+  
+  <!-- Text: ANGELS -->
+  <text x="78" y="38" font-family="Georgia, serif" font-size="28" font-weight="600" fill="#2d5a4a" letter-spacing="3">
+    ANGELS
+  </text>
+  
+  <!-- Text: Adult Daycare Services -->
+  <text x="78" y="58" font-family="'DM Sans', Arial, sans-serif" font-size="12" font-weight="500" fill="#3d3a36" letter-spacing="1">
+    ADULT DAYCARE SERVICES
+  </text>
+  
+  <!-- Decorative Line -->
+  <line x1="78" y1="64" x2="230" y2="64" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- LLC -->
+  <text x="235" y="58" font-family="'DM Sans', Arial, sans-serif" font-size="10" font-weight="400" fill="#9a9286">
+    LLC
+  </text>
+</svg>

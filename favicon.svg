@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5a4a"/>
+      <stop offset="100%" style="stop-color:#1e3d32"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="url(#bg)"/>
+  
+  <!-- Angel Wings -->
+  <g transform="translate(32, 32)">
+    <!-- Left Wing -->
+    <path d="M-2 0 Q-15 -12 -20 2 Q-18 12 -8 14 Q-2 14 -2 8 Z" 
+          fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Right Wing -->
+    <path d="M2 0 Q15 -12 20 2 Q18 12 8 14 Q2 14 2 8 Z" 
+          fill="#ffffff" opacity="0.95"/>
+    
+    <!-- Halo -->
+    <ellipse cx="0" cy="-14" rx="10" ry="4" fill="none" stroke="#c9a962" stroke-width="2.5"/>
+    
+    <!-- Heart -->
+    <path d="M0 6 Q-6 2 -6 -3 Q-6 -8 0 -4 Q6 -8 6 -3 Q6 2 0 6" 
+          fill="#c9a962"/>
+  </g>
+</svg>
