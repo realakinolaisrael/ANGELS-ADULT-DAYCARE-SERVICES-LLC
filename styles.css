@@ -1775,6 +1775,27 @@ p {
   .benefits-list {
     padding-left: 0;
   }
+  
+  /* Careers Page - Small Tablet */
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .job-card {
+    padding: 1.5rem;
+  }
+  
+  .why-image img {
+    min-height: 250px;
+  }
+  
+  .apply-wrapper {
+    gap: 2rem;
+  }
+  
+  .apply-form {
+    padding: 1.75rem;
+  }
 }
 
 /* Mobile Phone (600px and below) */
@@ -1913,6 +1934,46 @@ p {
     align-items: flex-start;
   }
   
+  .job-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .job-card > p {
+    font-size: 0.9rem;
+  }
+  
+  .job-details {
+    padding: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .job-details li {
+    font-size: 0.85rem;
+  }
+  
+  .job-type, .job-location {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  /* Why Section Mobile */
+  .why-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .why-content > p {
+    font-size: 0.95rem;
+  }
+  
+  .benefits-list li {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+  
+  .why-image img {
+    min-height: 220px;
+  }
+  
   /* Form */
   .apply-form {
     padding: 1.5rem;
@@ -1922,10 +1983,72 @@ p {
     text-align: center;
   }
   
+  .apply-info h2 {
+    font-size: 1.4rem;
+  }
+  
+  .apply-info > p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="date"],
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 0.85rem;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+  
+  .form-checkbox label {
+    font-size: 0.8rem;
+  }
+  
+  .form-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+  }
+  
+  .form-notice {
+    padding: 0.85rem;
+  }
+  
+  .form-notice p {
+    font-size: 0.75rem;
+  }
+  
   .contact-item {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+  
+  .contact-info {
+    gap: 1rem;
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+  
+  .contact-item strong {
+    font-size: 0.85rem;
+  }
+  
+  .contact-item p {
+    font-size: 0.9rem;
   }
   
   /* Gallery */
@@ -2021,6 +2144,44 @@ p {
   
   .page-hero h1 {
     font-size: 1.4rem;
+  }
+  
+  /* Careers Page - Extra Small */
+  .job-card {
+    padding: 1rem;
+  }
+  
+  .job-card h3 {
+    font-size: 1rem;
+  }
+  
+  .job-details {
+    padding: 0.75rem;
+  }
+  
+  .job-details li {
+    font-size: 0.8rem;
+  }
+  
+  .apply-form {
+    padding: 1rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="date"],
+  .form-group select,
+  .form-group textarea {
+    padding: 0.65rem 0.75rem;
+  }
+  
+  .benefits-list li {
+    font-size: 0.85rem;
+  }
+  
+  .section-tag {
+    font-size: 0.7rem;
   }
 }
 
