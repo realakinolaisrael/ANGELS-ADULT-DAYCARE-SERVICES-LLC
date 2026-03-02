@@ -4,19 +4,19 @@
   --font-display: 'Playfair Display', Georgia, serif;
   
   --white: #ffffff;
-  --off-white: #f8f7f4;
-  --cream: #f4f1eb;
-  --sand: #e8e4dc;
-  --warm-gray: #9a9286;
-  --charcoal: #3d3a36;
-  --dark: #1f1d1a;
+  --off-white: #fdf5f8;
+  --cream: #fceef3;
+  --sand: #f5e1ea;
+  --warm-gray: #9a8690;
+  --charcoal: #3d363a;
+  --dark: #2d1f29;
   
-  --primary: #2d5a4a;
-  --primary-dark: #1e3d32;
-  --primary-light: #e8f0ed;
+  --primary: #e94e8f;
+  --primary-dark: #c73b76;
+  --primary-light: #fce4ef;
   
-  --accent: #c9a962;
-  --accent-soft: #f5f0e3;
+  --accent: #9b59b6;
+  --accent-soft: #f3e5f5;
   
   --shadow-sm: 0 2px 8px rgba(31, 29, 26, 0.06);
   --shadow-md: 0 8px 30px rgba(31, 29, 26, 0.1);
