@@ -583,6 +583,132 @@ p {
   line-height: 1.8;
 }
 
+/* ===== Location Section ===== */
+.section-location {
+  background: var(--light);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.location-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.location-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--neutral);
+  margin: 0;
+}
+
+.location-card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.location-card a:hover {
+  text-decoration: underline;
+}
+
+.btn-directions {
+  margin-top: auto;
+  text-align: center;
+}
+
+.location-map {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 450px;
+}
+
+.location-map .map-link {
+  display: block;
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  pointer-events: none;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.map-overlay span {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.map-link:hover .map-overlay {
+  background: linear-gradient(transparent, rgba(45, 90, 74, 0.9));
+}
+
+@media (max-width: 900px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .location-info {
+    order: 2;
+  }
+
+  .location-map {
+    order: 1;
+    min-height: 350px;
+  }
+
+  .location-map iframe {
+    height: 350px;
+  }
+}
+
 /* ===== Contact Banner ===== */
 .contact-banner {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
