@@ -4,19 +4,20 @@
   --font-display: 'Playfair Display', Georgia, serif;
   
   --white: #ffffff;
-  --off-white: #fdf5f8;
-  --cream: #fceef3;
-  --sand: #f5e1ea;
+  --off-white: #faf5f7;
+  --cream: #f5eaef;
+  --sand: #eddce4;
   --warm-gray: #9a8690;
   --charcoal: #3d363a;
   --dark: #2d1f29;
   
-  --primary: #e94e8f;
-  --primary-dark: #c73b76;
-  --primary-light: #fce4ef;
+  --primary: #c2185b;
+  --primary-dark: #9c1349;
+  --primary-light: #f8e1ec;
   
-  --accent: #9b59b6;
-  --accent-soft: #f3e5f5;
+  --accent: #7b1fa2;
+  --accent-soft: #e1bee7;
+  --accent-dark: #6a1b9a;
   
   --shadow-sm: 0 2px 8px rgba(31, 29, 26, 0.06);
   --shadow-md: 0 8px 30px rgba(31, 29, 26, 0.1);
@@ -242,9 +243,9 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(31, 29, 26, 0.4) 0%,
-    rgba(31, 29, 26, 0.6) 100%
+    135deg,
+    rgba(194, 24, 91, 0.5) 0%,
+    rgba(123, 31, 162, 0.5) 100%
   );
 }
 
@@ -358,6 +359,17 @@ p {
   border-color: var(--white);
 }
 
+.btn-secondary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .btn-outline-light {
   background: transparent;
   color: var(--white);
@@ -387,7 +399,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -437,6 +449,10 @@ p {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   border-left: 4px solid var(--primary);
+}
+
+.stat:nth-child(even) {
+  border-left-color: var(--accent);
 }
 
 .stat-icon {
@@ -492,6 +508,14 @@ p {
   background: var(--primary-light);
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
+}
+
+.service-card:nth-child(even) .service-num {
+  color: var(--accent);
+}
+
+.service-card:nth-child(even):hover {
+  background: var(--accent-soft);
 }
 
 .service-num {
@@ -616,7 +640,7 @@ p {
 .location-card h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
@@ -711,7 +735,7 @@ p {
 
 /* ===== Contact Banner ===== */
 .contact-banner {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   padding: 4rem 0;
 }
 
@@ -791,7 +815,7 @@ p {
 }
 
 .footer-links a:hover {
-  color: var(--white);
+  color: var(--accent-soft);
 }
 
 .footer-contact p {
