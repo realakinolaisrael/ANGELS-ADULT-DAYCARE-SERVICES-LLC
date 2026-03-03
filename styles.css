@@ -243,9 +243,9 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(194, 24, 91, 0.5) 0%,
-    rgba(123, 31, 162, 0.5) 100%
+    to bottom,
+    rgba(31, 29, 26, 0.4) 0%,
+    rgba(31, 29, 26, 0.6) 100%
   );
 }
 
