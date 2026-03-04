@@ -43,13 +43,15 @@ ANGELS-ADULT-DAYCARE-SERVICES-LLC/
 Located in `styles.css` under `:root`:
 
 ```css
---primary: #2d5a4a;        /* Main green */
---primary-dark: #1e3d32;   /* Darker green */
---primary-light: #e8f0ed;  /* Light green background */
---accent: #c9a962;         /* Gold accent */
---charcoal: #3d3a36;       /* Text color */
---cream: #f4f1eb;          /* Background sections */
---off-white: #f8f7f4;      /* Alternate background */
+--primary: #c2185b;        /* Main pink/magenta */
+--primary-dark: #9c1349;   /* Darker pink */
+--primary-light: #f8e1ec;  /* Light pink background */
+--accent: #7b1fa2;         /* Purple accent */
+--accent-soft: #e1bee7;    /* Soft purple */
+--charcoal: #3d363a;       /* Text color */
+--dark: #2d1f29;           /* Headings */
+--cream: #f5eaef;          /* Background sections */
+--off-white: #faf5f7;      /* Alternate background */
 ```
 
 ### Typography
@@ -69,7 +71,7 @@ Located in `styles.css` under `:root`:
 ## 📄 Page Breakdown
 
 ### index.html (Home)
-- **Hero Section:** Full-screen video background with overlay
+- **Hero Section:** Full-screen video background with text shadows for readability (no overlay)
 - **About Preview:** Image + text grid
 - **Services Section:** 6-card grid layout
 - **Gallery Section:** 3-image showcase
@@ -182,14 +184,16 @@ The application form uses [FormSubmit.co](https://formsubmit.co/) - a free form 
 
 ## 🚀 Deployment
 
-This is a static website - deploy to any static hosting:
+This is a static website hosted on **Hostinger**.
 
-| Platform | Command/Method |
-|----------|----------------|
-| **GitHub Pages** | Push to `gh-pages` branch or enable in Settings |
-| **Netlify** | Drag & drop folder or connect Git repo |
-| **Vercel** | Connect Git repo, auto-deploys on push |
-| **Traditional** | FTP upload all files to web root |
+### Deployment Methods
+
+| Method | Steps |
+|--------|-------|
+| **Hostinger File Manager** | Upload files via hPanel → Files → File Manager |
+| **Hostinger Git** | Set up Git auto-deploy in hPanel → Advanced → Git |
+| **FTP** | Connect via FileZilla using Hostinger FTP credentials |
+| **SSH** | `git pull` from server if Git is configured |
 
 ### For Production
 
@@ -266,4 +270,4 @@ Copy a `.team-card` block in `about.html` and update:
 
 ---
 
-*Last updated: February 2026*
+*Last updated: March 2026*
