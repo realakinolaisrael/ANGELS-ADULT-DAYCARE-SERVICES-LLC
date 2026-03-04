@@ -197,8 +197,7 @@ This is a static website - deploy to any static hosting:
 2. Update FormSubmit email in `careers.html`
 3. Add actual social media URLs in footer
 4. Add your `intro-video.mp4` to root directory
-5. Optimize images (compress JPGs)
-
+5. Optimize images (compress JPGs).
 ---
 
 ## 🔧 Customization Guide
