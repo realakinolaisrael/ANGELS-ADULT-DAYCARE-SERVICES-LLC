@@ -42,6 +42,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -52,6 +53,7 @@ body {
   background: var(--white);
   overflow-x: hidden;
   min-height: 100vh;
+  width: 100%;
 }
 
 img, video {
@@ -221,6 +223,8 @@ p {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,6 +262,7 @@ p {
   color: var(--white);
   padding: 0 5%;
   max-width: 800px;
+  width: 100%;
 }
 
 .hero-tag {
@@ -1750,6 +1755,15 @@ p {
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  .nav a,
+  .nav .nav-cta {
+    width: 100%;
+    text-align: center;
   }
   
   .nav.open {
@@ -2085,6 +2099,12 @@ p {
     padding: 0 1rem;
     padding-top: 80px;
   }
+
+  .hero {
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
   
   .hero-desc {
     font-size: 0.95rem;
@@ -2095,11 +2115,19 @@ p {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    padding: 0 1rem;
+    padding: 0;
   }
   
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .location-map {
+    min-height: 280px;
+  }
+
+  .location-map iframe {
+    height: 280px;
   }
   
   /* Team Grid */
@@ -2121,6 +2149,7 @@ p {
     padding: 12px 24px;
     font-size: 0.9rem;
     width: 100%;
+    min-height: 44px;
   }
   
   .btn-sm {
@@ -2363,6 +2392,18 @@ p {
   .hero-content {
     padding-top: 60px;
   }
+
+  .hero {
+    padding-top: 0.75rem;
+  }
+
+  .location-map {
+    min-height: 240px;
+  }
+
+  .location-map iframe {
+    height: 240px;
+  }
   
   .logo-img {
     height: 30px;
@@ -2421,6 +2462,52 @@ p {
   
   .section-tag {
     font-size: 0.7rem;
+  }
+}
+
+/* iPhone SE / very short screens */
+@media (max-width: 380px) and (max-height: 700px) {
+  .header-inner {
+    height: 64px;
+  }
+
+  .nav {
+    top: 64px;
+    max-height: calc(100dvh - 64px);
+  }
+
+  .hero-content {
+    padding-top: 66px;
+  }
+
+  .hero h1 {
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Foldable portrait narrow mode */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.65rem;
+  }
+
+  .hero-actions .btn,
+  .banner-actions .btn {
+    font-size: 0.82rem;
+    padding: 10px 14px;
+  }
+
+  .service-card,
+  .mission-card,
+  .job-card,
+  .apply-form {
+    padding: 0.9rem;
   }
 }
 
