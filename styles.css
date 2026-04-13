@@ -1068,6 +1068,7 @@ p {
 /* ===== Application Form ===== */
 .section-apply {
   background: var(--white);
+  scroll-margin-top: 96px;
 }
 
 .apply-wrapper {
@@ -1075,6 +1076,11 @@ p {
   grid-template-columns: 1fr 1.4fr;
   gap: 4rem;
   align-items: start;
+}
+
+.apply-info,
+.apply-form {
+  min-width: 0;
 }
 
 .apply-info h2 {
@@ -1127,6 +1133,7 @@ p {
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--sand);
+  width: 100%;
 }
 
 .form-group {
@@ -1185,6 +1192,7 @@ p {
   padding: 0.75rem;
   background: var(--white);
   cursor: pointer;
+  max-width: 100%;
 }
 
 .form-hint {
@@ -1234,6 +1242,7 @@ p {
   border-radius: var(--radius-sm);
   margin-top: 1rem;
   font-size: 0.9rem;
+  word-break: break-word;
 }
 
 .form-status.error {
@@ -1896,6 +1905,18 @@ p {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .section-apply {
+    scroll-margin-top: 88px;
+  }
+
+  .apply-info {
+    text-align: left;
+  }
+
+  .section-apply .contact-item {
+    align-items: flex-start;
+  }
   
   /* Story Grid */
   .story-grid {
@@ -2034,6 +2055,14 @@ p {
   
   .apply-form {
     padding: 1.75rem;
+  }
+
+  .apply-info > p {
+    margin-bottom: 1.25rem;
+  }
+
+  .section-apply .contact-info {
+    gap: 0.9rem;
   }
 }
 
@@ -2231,6 +2260,7 @@ p {
   /* Form */
   .apply-form {
     padding: 1.5rem;
+    border-radius: var(--radius-md);
   }
   
   .apply-info {
@@ -2249,6 +2279,10 @@ p {
   .form-group {
     margin-bottom: 1rem;
   }
+
+  .form-group:last-of-type {
+    margin-bottom: 0.75rem;
+  }
   
   .form-group label {
     font-size: 0.85rem;
@@ -2263,6 +2297,16 @@ p {
   .form-group textarea {
     padding: 0.75rem 0.85rem;
     font-size: 16px; /* Prevents iOS zoom on focus */
+    line-height: 1.4;
+  }
+
+  .form-group textarea {
+    min-height: 112px;
+  }
+
+  .form-status {
+    font-size: 0.85rem;
+    padding: 0.85rem;
   }
   
   .form-checkbox label {
@@ -2303,6 +2347,10 @@ p {
   
   .contact-item p {
     font-size: 0.9rem;
+  }
+
+  .section-apply .btn-lg {
+    margin-top: 0.25rem;
   }
   
   /* Gallery */
@@ -2445,6 +2493,10 @@ p {
   
   .apply-form {
     padding: 1rem;
+  }
+
+  .section-apply {
+    scroll-margin-top: 78px;
   }
   
   .form-group input[type="text"],
