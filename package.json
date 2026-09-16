@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for ANGELS ADULT DAYCARE SERVICES LLC, a compassionate adult daycare facility located in Meridian, Mississippi.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realakinolaisrael/ANGELS-ADULT-DAYCARE-SERVICES-LLC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realakinolaisrael/ANGELS-ADULT-DAYCARE-SERVICES-LLC/issues"
+  },
+  "homepage": "https://github.com/realakinolaisrael/ANGELS-ADULT-DAYCARE-SERVICES-LLC#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
