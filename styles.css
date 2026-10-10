@@ -828,6 +828,16 @@ p {
   color: var(--accent-soft);
 }
 
+.footer-links .footer-staff-link {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.82rem;
+}
+
+.footer-links .footer-staff-link:hover {
+  color: var(--white);
+}
+
 .footer-contact p {
   font-size: 0.95rem;
   margin-bottom: 0.75rem;
@@ -2522,6 +2532,16 @@ p {
     max-width: 320px;
     margin: 0 auto;
   }
+
+  /* Keep multi-field forms comfortable on narrow screens. */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-row .form-group:last-child {
+    margin-bottom: 1rem;
+  }
   
   /* Buttons */
   .btn {
@@ -2701,6 +2721,77 @@ p {
 
   .section-apply .btn-lg {
     margin-top: 0.25rem;
+  }
+}
+
+/* Narrow-screen dashboard refinements. */
+@media (max-width: 600px) {
+  .admin-shell {
+    width: calc(100% - 2rem);
+    padding: 1rem 0 2rem;
+  }
+
+  .admin-login {
+    margin-top: 1rem;
+    padding: 1.25rem;
+  }
+
+  .admin-logo {
+    width: 155px;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-topbar,
+  .admin-card-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-topbar h1 {
+    font-size: 1.75rem;
+  }
+
+  .admin-user {
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .admin-user .btn {
+    width: auto;
+    min-width: 96px;
+  }
+
+  .admin-card {
+    padding: 1rem;
+  }
+
+  .admin-card h2 {
+    font-size: 1.35rem;
+  }
+
+  .admin-card-heading select {
+    width: 100%;
+  }
+
+  .admin-table-wrap {
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+  }
+
+  .admin-table {
+    min-width: 620px;
+  }
+
+  .diagnostic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-form {
+    padding: 1.25rem;
+  }
+
+  .appointment-option {
+    text-align: left;
   }
   
   /* Gallery */
