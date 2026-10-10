@@ -11,6 +11,11 @@ ANGELS-ADULT-DAYCARE-SERVICES-LLC/
 ├── index.html          # Main landing page
 ├── about.html          # About page with company story & Board of Directors
 ├── careers.html        # Job listings & application form
+├── appointment.html    # Appointment request page
+├── admin.html          # Browser-local staff dashboard
+├── admin.js            # Admin authentication and dashboard actions
+├── appointment.js      # Saves public appointment requests
+├── local-store.js      # Browser-local storage helper
 ├── styles.css          # All CSS styles (single file)
 ├── script.js           # JavaScript functionality
 ├── intro-video.mp4     # Hero section background video
@@ -32,7 +37,7 @@ ANGELS-ADULT-DAYCARE-SERVICES-LLC/
 | **CSS3** | Styling with CSS variables, Flexbox, Grid |
 | **Vanilla JavaScript** | Interactivity (no frameworks) |
 | **Google Fonts** | Typography (DM Sans, Playfair Display) |
-| **FormSubmit.co** | Form handling (no backend required) |
+| **Browser localStorage** | Local bookings, admin PIN, call logs, and site settings |
 
 ---
 
@@ -161,6 +166,19 @@ The application form uses [FormSubmit.co](https://formsubmit.co/) - a free form 
 | Cover Letter | `coverLetter` | Yes | Max 2000 chars |
 | References | `references` | No | Max 1000 chars |
 | Consent | `consent` | Yes | Checkbox |
+
+## 🔐 Admin Dashboard
+
+The staff dashboard is available at `/admin.html` and uses browser
+`localStorage`, so it requires no paid service or backend. On first use, create
+a local PIN. Staff can review bookings, update status, delete requests, record
+phone calls, and update contact settings.
+
+This is intentionally a lightweight tool for early operations. Data is stored
+only in the specific browser and device where it was entered; it is not shared
+between staff devices and can be lost if browser data is cleared. Do not use
+this version for sensitive medical or financial information. A hosted database
+and real authentication should be added before multi-device or production use.
 
 ---
 
