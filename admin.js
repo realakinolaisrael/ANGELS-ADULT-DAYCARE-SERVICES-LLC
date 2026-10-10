@@ -6,6 +6,7 @@
   const appStatus = document.getElementById('appStatus');
   const store = window.angelsStore;
   let isSettingPin = !store.hasAdminPin();
+  let currentRole = '';
 
   if (!store) {
     loginStatus.textContent = 'Local storage is unavailable in this browser.';
@@ -28,6 +29,8 @@
       intro.textContent = 'Choose a PIN for this browser to protect the local dashboard.';
       label.textContent = 'New admin PIN';
       button.textContent = 'Save PIN and continue';
+      loginForm.querySelector('#loginAccess').value = 'owner';
+      loginForm.querySelector('#loginAccess').readOnly = true;
     }
   }
 
@@ -89,7 +92,10 @@
   function loadApp() {
     loginPanel.hidden = true;
     adminApp.hidden = false;
-    document.getElementById('adminEmail').textContent = 'Local admin';
+    document.getElementById('adminEmail').textContent = currentRole === 'superadmin' ? 'Owner' : document.getElementById('loginAccess').value;
+    document.getElementById('adminRole').textContent = currentRole;
+    document.getElementById('settingsForm').closest('.admin-card').hidden = currentRole === 'staff';
+    document.getElementById('superadminLinkCard').hidden = currentRole !== 'superadmin';
     loadBookings();
     loadSettings();
   }
@@ -97,18 +103,31 @@
   loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const pin = document.getElementById('loginPassword').value;
+    const accessName = document.getElementById('loginAccess').value.trim().toLowerCase();
     if (pin.length < 4) {
       setStatus(loginStatus, 'Use at least 4 characters for your PIN.', 'error');
       return;
     }
     if (isSettingPin) {
+      if (accessName !== 'owner') {
+        setStatus(loginStatus, 'The first access must use the name owner.', 'error');
+        return;
+      }
       store.setAdminPin(pin);
       isSettingPin = false;
+      currentRole = 'superadmin';
       loadApp();
-    } else if (store.checkAdminPin(pin)) {
+    } else if (accessName === 'owner' && store.checkAdminPin(pin)) {
+      currentRole = 'superadmin';
       loadApp();
     } else {
-      setStatus(loginStatus, 'Incorrect PIN.', 'error');
+      const account = store.getAccounts().find((item) => item.name.toLowerCase() === accessName && item.active && item.pin === pin);
+      if (!account) {
+        setStatus(loginStatus, 'Incorrect access name or PIN.', 'error');
+        return;
+      }
+      currentRole = account.role;
+      loadApp();
     }
   });
 
@@ -116,6 +135,7 @@
     adminApp.hidden = true;
     loginPanel.hidden = false;
     loginForm.reset();
+    currentRole = '';
     setStatus(loginStatus, 'Signed out.');
   });
 

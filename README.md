@@ -14,6 +14,8 @@ ANGELS-ADULT-DAYCARE-SERVICES-LLC/
 ├── appointment.html    # Appointment request page
 ├── admin.html          # Browser-local staff dashboard
 ├── admin.js            # Admin authentication and dashboard actions
+├── superadmin.html     # Owner access and troubleshooting portal
+├── superadmin.js       # Staff management and backup tools
 ├── appointment.js      # Saves public appointment requests
 ├── local-store.js      # Browser-local storage helper
 ├── styles.css          # All CSS styles (single file)
@@ -173,6 +175,11 @@ The staff dashboard is available at `/admin.html` and uses browser
 `localStorage`, so it requires no paid service or backend. On first use, create
 a local PIN. Staff can review bookings, update status, delete requests, record
 phone calls, and update contact settings.
+
+The owner can open `/superadmin.html` with the owner PIN to create or remove
+staff access, choose staff/admin roles, export or restore a backup, clear
+bookings and calls, and inspect local storage diagnostics. Staff accounts are
+local to the same browser and device.
 
 This is intentionally a lightweight tool for early operations. Data is stored
 only in the specific browser and device where it was entered; it is not shared

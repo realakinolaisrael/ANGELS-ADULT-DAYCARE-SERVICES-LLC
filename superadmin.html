@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Superadmin | ANGELS ADULT DAYCARE SERVICES LLC</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261010" />
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-login" id="superLogin">
+        <img src="logo.svg" alt="ANGELS Adult Daycare Services" class="admin-logo" />
+        <p class="section-tag">Owner controls</p>
+        <h1>Superadmin access</h1>
+        <p>Use the owner PIN to manage staff access and troubleshoot this local tool.</p>
+        <form id="superLoginForm" class="admin-login-form">
+          <div class="form-group"><label for="superPin">Owner PIN</label><input type="password" id="superPin" required autocomplete="current-password" /></div>
+          <button class="btn btn-primary btn-lg" type="submit">Open superadmin</button>
+          <p class="admin-status" id="superLoginStatus" role="alert"></p>
+        </form>
+        <a href="admin.html" class="text-link">← Back to admin</a>
+      </section>
+
+      <section class="admin-app" id="superApp" hidden>
+        <header class="admin-topbar">
+          <div><p class="section-tag">Owner controls</p><h1>Superadmin</h1></div>
+          <div class="admin-user"><span>Local owner</span><button class="btn btn-outline" id="superLogout" type="button">Sign out</button></div>
+        </header>
+        <div class="admin-status" id="superStatus" role="status"></div>
+        <div class="admin-grid">
+          <section class="admin-card">
+            <p class="section-tag">Access management</p><h2>Add staff access</h2>
+            <p class="admin-card-copy">Create a local name and PIN. Share it with the approved staff member only.</p>
+            <form id="staffForm" class="admin-form">
+              <div class="form-group"><label for="staffName">Staff access name</label><input id="staffName" required maxlength="40" placeholder="e.g. frontdesk" /></div>
+              <div class="form-group"><label for="staffPin">Staff PIN</label><input id="staffPin" type="password" required minlength="4" maxlength="32" /></div>
+              <div class="form-group"><label for="staffRole">Access level</label><select id="staffRole"><option value="staff">Staff — bookings and calls</option><option value="admin">Admin — includes site settings</option></select></div>
+              <button class="btn btn-primary" type="submit">Create access</button>
+            </form>
+          </section>
+          <section class="admin-card">
+            <p class="section-tag">Troubleshooting</p><h2>System tools</h2>
+            <div class="admin-tool-list">
+              <button class="btn btn-outline" id="exportData" type="button">Export local backup</button>
+              <label class="btn btn-outline" for="importData">Restore backup</label>
+              <input id="importData" type="file" accept="application/json" hidden />
+              <button class="btn btn-outline-danger" id="clearData" type="button">Clear bookings and calls</button>
+            </div>
+            <p class="admin-card-copy">Backups contain local bookings, calls, staff access, and settings. Keep them private.</p>
+          </section>
+          <section class="admin-card admin-card-wide">
+            <div class="admin-card-heading"><div><p class="section-tag">Approved users</p><h2>Staff access list</h2></div><span id="accountCount"></span></div>
+            <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Role</th><th>Created</th><th>Status</th><th></th></tr></thead><tbody id="accountsTable"></tbody></table></div>
+          </section>
+          <section class="admin-card admin-card-wide">
+            <p class="section-tag">Local diagnostics</p><h2>Storage health</h2>
+            <div class="diagnostic-grid" id="diagnostics"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="local-store.js"></script>
+    <script src="superadmin.js"></script>
+  </body>
+</html>

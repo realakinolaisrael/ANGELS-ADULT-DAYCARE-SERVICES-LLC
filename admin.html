@@ -20,6 +20,10 @@
         <p>Manage appointments, calls, and website settings from this browser.</p>
         <form id="loginForm" class="admin-login-form">
           <div class="form-group">
+            <label for="loginAccess">Access name</label>
+            <input type="text" id="loginAccess" required autocomplete="username" placeholder="owner or staff name" />
+          </div>
+          <div class="form-group">
             <label for="loginPassword">Password</label>
             <input type="password" id="loginPassword" required autocomplete="current-password" />
           </div>
@@ -36,7 +40,7 @@
             <h1>Dashboard</h1>
           </div>
           <div class="admin-user">
-            <span id="adminEmail"></span>
+            <span><span id="adminEmail"></span> · <span id="adminRole"></span></span>
             <button class="btn btn-outline" id="logoutBtn" type="button">Sign out</button>
           </div>
         </header>
@@ -86,6 +90,12 @@
               <div class="form-group"><label for="settingsHours">Opening hours</label><input id="settingsHours" required /></div>
               <button class="btn btn-primary" type="submit">Save settings</button>
             </form>
+          </section>
+          <section class="admin-card admin-card-wide" id="superadminLinkCard" hidden>
+            <p class="section-tag">Owner controls</p>
+            <h2>Access management</h2>
+            <p>Only the superadmin can add or remove staff access.</p>
+            <a class="btn btn-primary" href="superadmin.html">Open Superadmin</a>
           </section>
         </div>
       </section>

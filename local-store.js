@@ -31,6 +31,12 @@
     },
     checkAdminPin(pin) {
       return localStorage.getItem(prefix + 'admin_pin') === pin;
+    },
+    getAccounts() {
+      return this.read('staff_accounts', []);
+    },
+    saveAccounts(accounts) {
+      return this.write('staff_accounts', accounts);
     }
   };
 })();
